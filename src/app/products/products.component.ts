@@ -28,6 +28,6 @@ export class ProductsComponent {
   }
 
   addToCart() {
-    console.log('clicked');
+    console.log('clicked, onClick working.');
   }
 }

@@ -6,7 +6,9 @@
         ><h3>{{ product.category }}</h3>
         <img src="{{ product.image }}" />
       </a>
-      <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-info" (click)="addToCart()">
+        Info
+      </button>
     </div>
   </div>
 </div>

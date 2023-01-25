@@ -15,8 +15,8 @@ export class ProductsService {
     return this.http.get(this.url).pipe(catchError(this.handleError));
   }
 
-  getProduct(id: Number): Observable<any> {
-    const url = `${this.url}/${id}`;
+  getProduct(id: number): Observable<any> {
+    const url = `https://fakestoreapi.com/products/${id}`;
     return this.http.get(url).pipe(catchError(this.handleError));
   }
 
