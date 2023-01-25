@@ -1,4 +1,17 @@
 <p>singleproduct works!</p>
 <div *ngIf="product">
   <h4>{{ product.title }}</h4>
+  <img class="img-fluid" src="{{ product.image }}" />
+  <p>{{ product.description }}</p>
+  <button type="button" class="btn btn-success" (click)="addToCart()">
+    Add to Cart
+  </button>
+</div>
+
+<div></div>
+<div class="error_message">
+  {{ errorMessage }}
+</div>
+<div class="loader" *ngIf="Loader">
+  <div class="loader">Loading....</div>
 </div>

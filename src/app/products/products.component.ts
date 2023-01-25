@@ -8,7 +8,8 @@ import { ProductsService } from '../services/products.service';
 })
 export class ProductsComponent {
   constructor(private httpService: ProductsService) {}
-
+  Loader: boolean = true;
+  ErrorMessage: string = '';
   products: any[] = [];
 
   fetchProducts() {
@@ -16,9 +17,13 @@ export class ProductsComponent {
       next: (response) => {
         this.products = response;
         console.log(response);
+        this.Loader = false;
       },
       error: (error) => {
         console.log('error, req failed', error.message);
+        this.Loader = false;
+        this.ErrorMessage =
+          'Some error happened, please go back to the homepage.';
       },
     });
   }
