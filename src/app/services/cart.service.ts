@@ -6,7 +6,7 @@ import Product from '../products';
   providedIn: 'root',
 })
 export class CartService {
-  //Next up fix page to view products added to cart.
+  //Next up fix button to remove each item from cart.
   //source: https://angular.io/start/start-data
   cartProducts: Product[] = [];
 
