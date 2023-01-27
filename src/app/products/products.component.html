@@ -1,14 +1,13 @@
 <p>products works!</p>
 <div class="products_container container-md text-center">
-  <div class="row align-items-center">
-    <div *ngFor="let product of products" class="col">
+  <div class="row m-3">
+    <div *ngFor="let product of products" class="col p-3">
       <a routerLink="/product/{{ product.id }}"
-        ><h3>{{ product.category }}</h3>
+        ><h3>{{ product.title }}</h3>
         <img src="{{ product.image }}" />
       </a>
-      <button type="button" class="btn btn-info" (click)="addToCart()">
-        Info
-      </button>
+      <h5>{{ product.category }}</h5>
+      <button type="button" class="btn btn-info p-1 m-3">Info</button>
     </div>
   </div>
 </div>

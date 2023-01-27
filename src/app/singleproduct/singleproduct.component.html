@@ -3,7 +3,7 @@
   <h4>{{ product.title }}</h4>
   <img class="img-fluid" src="{{ product.image }}" />
   <p>{{ product.description }}</p>
-  <button type="button" class="btn btn-success" (click)="addToCart()">
+  <button type="button" class="btn btn-success" (click)="addToCart(product)">
     Add to Cart
   </button>
 </div>

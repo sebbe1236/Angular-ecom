@@ -1,6 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import Product from '../products';
+import { CartService } from '../services/cart.service';
 import { ProductsService } from '../services/products.service';
 
 @Component({
@@ -14,7 +16,8 @@ export class SingleproductComponent {
   errorMessage: string = '';
   constructor(
     private productService: ProductsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private cartService: CartService
   ) {}
 
   getSingleProduct() {
@@ -37,7 +40,8 @@ export class SingleproductComponent {
     this.getSingleProduct();
   }
 
-  addToCart() {
-    console.log('Clicked');
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
+    window.alert('Product added to cart');
   }
 }

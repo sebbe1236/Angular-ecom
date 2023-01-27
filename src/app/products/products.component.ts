@@ -31,8 +31,4 @@ export class ProductsComponent {
   ngOnInit(): void {
     this.fetchProducts();
   }
-
-  addToCart() {
-    console.log('clicked, onClick working.');
-  }
 }
