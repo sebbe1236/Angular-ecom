@@ -42,6 +42,7 @@ export class SingleproductComponent {
 
   addToCart(product: Product) {
     this.cartService.addToCart(product);
+    this.cartService.saveCart();
     window.alert('Product added to cart');
   }
 }

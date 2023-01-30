@@ -11,10 +11,15 @@ export class CartService {
   cartProducts: Product[] = [];
 
   constructor() {}
+
   addToCart(product: Product) {
     this.cartProducts.push(product);
     console.log(product);
     console.log(this.cartProducts);
+  }
+
+  saveCart() {
+    localStorage.setItem('cart_items', JSON.stringify(this.cartProducts));
   }
 
   getItems() {
@@ -23,6 +28,7 @@ export class CartService {
 
   clearCart() {
     this.cartProducts = [];
+    localStorage.removeItem('cart_items');
     return this.cartProducts;
   }
 }
