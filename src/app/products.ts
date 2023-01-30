@@ -3,4 +3,5 @@ export default interface Product {
   price: number;
   image: HTMLImageElement;
   category: string;
+  id: number;
 }

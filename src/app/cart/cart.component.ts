@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { CartService } from '../services/cart.service';
 
 @Component({
@@ -10,4 +11,8 @@ export class CartComponent {
   products = this.cartService.getItems();
 
   constructor(private cartService: CartService) {}
+
+  removeCartProduct() {
+    this.products = this.cartService.clearCart();
+  }
 }
