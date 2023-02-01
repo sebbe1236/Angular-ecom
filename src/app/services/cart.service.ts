@@ -26,8 +26,13 @@ export class CartService {
     return this.cartProducts;
   }
 
-  clearCart() {
-    this.cartProducts = [];
+  // clearCart() {
+  //   this.cartProducts = [];
+  //   localStorage.removeItem('cart_items');
+  //   return this.cartProducts;
+  // }
+  clearCart(id: any) {
+    this.cartProducts = this.cartProducts.filter((item) => item.id !== id);
     localStorage.removeItem('cart_items');
     return this.cartProducts;
   }
