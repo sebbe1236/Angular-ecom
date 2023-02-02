@@ -26,11 +26,6 @@ export class CartService {
     return this.cartProducts;
   }
 
-  // clearCart() {
-  //   this.cartProducts = [];
-  //   localStorage.removeItem('cart_items');
-  //   return this.cartProducts;
-  // }
   clearCart(id: any) {
     this.cartProducts = this.cartProducts.filter((item) => item.id !== id);
     localStorage.setItem('cart_items', JSON.stringify(this.cartProducts));
