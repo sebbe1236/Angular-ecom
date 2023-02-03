@@ -13,7 +13,7 @@ export class CartComponent {
   constructor(private cartService: CartService) {}
 
   removeCartProduct(productid: number) {
-    this.products = this.cartService.clearCart(productid);
+    this.products = this.cartService.clearCartItem(productid);
   }
 
   ngOnInit() {}

@@ -1,15 +1,18 @@
 <p>cart works!</p>
-<div *ngIf="products">
-  <div *ngFor="let product of products">
-    <p>{{ product.title }}</p>
-    <img class="img-fluid" src="{{ product.image }}" />
-    <button
-      type="button"
-      class="btn btn-primary"
-      (click)="removeCartProduct(product.id)"
-    >
-      Remove
-    </button>
+<div *ngIf="products" class="container container-md text-center">
+  <div class="row">
+    <div *ngFor="let product of products" class="col">
+      <p>{{ product.title }}</p>
+      <img class="img-fluid w-50 h-50" src="{{ product.image }}" />
+      <h3>price: {{ product.price }}$</h3>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="removeCartProduct(product.id)"
+      >
+        Remove
+      </button>
+    </div>
   </div>
 </div>
 <div *ngIf="products.length === 0">
