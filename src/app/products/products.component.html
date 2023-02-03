@@ -1,7 +1,16 @@
 <p>products works!</p>
+
+<input
+  [(ngModel)]="searchText"
+  class="form-control me-2"
+  type="text"
+  placeholder="Search"
+  aria-label="Search"
+/>
+
 <div class="products_container container-md text-center">
   <div class="row m-3">
-    <div *ngFor="let product of products" class="col p-5">
+    <div *ngFor="let product of products | filter : searchText" class="col p-5">
       <a routerLink="/product/{{ product.id }}"
         ><h3>{{ product.category }}</h3>
         <img src="{{ product.image }}" />
@@ -10,6 +19,9 @@
       <button type="button" class="btn btn-info p-1 m-3">Info</button>
     </div>
   </div>
+</div>
+<div *ngIf="searchText === 0">
+  <p>Invaliid reesults</p>
 </div>
 
 <div class="loader" *ngIf="Loader">

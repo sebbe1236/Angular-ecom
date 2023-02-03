@@ -11,6 +11,8 @@ import { ProductsComponent } from './products/products.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SingleproductComponent } from './singleproduct/singleproduct.component';
 import { CartComponent } from './cart/cart.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,9 @@ import { CartComponent } from './cart/cart.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    Ng2SearchPipeModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

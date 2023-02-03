@@ -11,12 +11,13 @@ export class ProductsComponent {
   Loader: boolean = true;
   ErrorMessage: string = '';
   products: any[] = [];
+  searchText: any;
 
   fetchProducts() {
     this.httpService.fetchProducts().subscribe({
       next: (response) => {
         this.products = response;
-        console.log(response);
+
         this.Loader = false;
       },
       error: (error) => {
