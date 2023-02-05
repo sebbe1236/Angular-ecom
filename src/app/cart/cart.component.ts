@@ -9,7 +9,6 @@ import { CartService } from '../services/cart.service';
 })
 export class CartComponent {
   products = this.cartService.getItems();
-  subTotal? = this.products;
 
   constructor(private cartService: CartService) {}
 

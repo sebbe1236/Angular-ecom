@@ -33,9 +33,9 @@ export class CartService {
 
     if (confirm) {
       this.cartProducts = this.cartProducts.filter((item) => item.id !== id);
+      localStorage.setItem('cart_items', JSON.stringify(this.cartProducts));
     }
 
-    localStorage.setItem('cart_items', JSON.stringify(this.cartProducts));
     return this.cartProducts;
   }
 }
