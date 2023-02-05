@@ -27,8 +27,14 @@ export class CartService {
   }
 
   //fjerner det som er i localstorage, fjerner via button...assign click event til knapp
+  //kan også kjøre localStorage.setItem("carts_items", json.stringify(this.cartProducts)) for å få removed
   clearCartItem(id: any) {
-    this.cartProducts = this.cartProducts.filter((item) => item.id !== id);
+    const confirm = window.confirm('test?');
+
+    if (confirm) {
+      this.cartProducts = this.cartProducts.filter((item) => item.id !== id);
+    }
+
     localStorage.setItem('cart_items', JSON.stringify(this.cartProducts));
     return this.cartProducts;
   }

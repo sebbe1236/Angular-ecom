@@ -4,14 +4,14 @@
     <div *ngFor="let product of products" class="col">
       <p>{{ product.title }}</p>
       <img class="img-fluid w-50 h-50" src="{{ product.image }}" />
-      <h3>price: {{ product.price }}$</h3>
+      <h3>price: {{ product.price | number }}$</h3>
       <div *ngIf="products.length > 0">
         <input type="number" min="1" value="1" />
       </div>
       <button
         type="button"
-        class="btn btn-primary"
         (click)="removeCartProduct(product.id)"
+        class="btn btn-primary"
       >
         Remove
       </button>
