@@ -17,6 +17,7 @@
       </button>
     </div>
   </div>
+  <span *ngIf="products.length > 0">total amount: ${{ getTotal }}</span>
 </div>
 <div *ngIf="products.length === 0">
   <h3>Cart is empty</h3>
