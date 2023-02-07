@@ -13,6 +13,7 @@ export class CartService {
   //legger til item`e i localstorage array, assigna til button
   addToCart(product: Product) {
     this.cartProducts.push(product);
+
     console.log(product);
     console.log(this.cartProducts);
   }
@@ -27,7 +28,7 @@ export class CartService {
   }
 
   //fjerner det som er i localstorage, fjerner via button...assign click event til knapp
-  //kan også kjøre localStorage.setItem("carts_items", json.stringify(this.cartProducts)) for å få removed
+
   removeCartItem(id: any) {
     const confirm = window.confirm('test?');
 
