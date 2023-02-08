@@ -13,6 +13,8 @@ import { SingleproductComponent } from './singleproduct/singleproduct.component'
 import { CartComponent } from './cart/cart.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule,
     FontAwesomeModule,
+    MatBadgeModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

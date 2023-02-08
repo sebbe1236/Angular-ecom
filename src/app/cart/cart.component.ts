@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import Product from '../products';
+import Cart from '../products';
 import { CartService } from '../services/cart.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { CartService } from '../services/cart.service';
 })
 export class CartComponent {
   //next up: display number of items in cart next to cart/cart sign.
+
   products = this.cartService.getItems();
 
   constructor(private cartService: CartService) {}

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,7 +10,7 @@ import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 export class NavbarComponent {
   basketIcon = faShoppingBasket;
 
-  constructor(private cartService: CartService) {}
+  itemsQuantity = 0;
 
   ngOnInit() {}
 }

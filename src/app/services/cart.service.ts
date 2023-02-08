@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, ReplaySubject, Subject } from 'rxjs';
 
 import Product from '../products';
 
@@ -11,14 +11,14 @@ export class CartService {
 
   constructor() {}
 
-  //legger til item`e i localstorage array, assigna til button
+  //legger til item`e i cartProducts array`et, functionen er assignet til en button click.
   addToCart(product: Product) {
     this.cartProducts.push(product);
 
     console.log(product);
     console.log(this.cartProducts);
   }
-  //lagrer til localstorage
+  //lagrer cartProducts array til localstorage
   saveCart() {
     localStorage.setItem('cart_items', JSON.stringify(this.cartProducts));
   }

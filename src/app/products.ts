@@ -5,3 +5,7 @@ export default interface Product {
   category: string;
   id: number;
 }
+
+export default interface Cart {
+  items: Array<Product>;
+}
