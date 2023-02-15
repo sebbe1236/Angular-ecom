@@ -3,3 +3,7 @@
   <p>{{ product.title }}</p>
   <img class="w-50 h-50" src="{{ product.image }}" />
 </div>
+
+<div *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</div>
