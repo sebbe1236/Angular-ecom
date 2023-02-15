@@ -14,6 +14,8 @@ export class SingleproductComponent {
   product?: any;
   Loader: boolean = true;
   errorMessage: string = '';
+  itemExists: any[] = [];
+
   constructor(
     private productService: ProductsService,
     private route: ActivatedRoute,
@@ -42,6 +44,7 @@ export class SingleproductComponent {
 
   addToCart(product: Product) {
     this.cartService.addToCart(product);
+
     this.cartService.saveCart();
     window.alert('Product added to cart');
   }

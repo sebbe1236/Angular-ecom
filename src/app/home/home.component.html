@@ -1,1 +1,5 @@
 <p>home works!</p>
+<div *ngFor="let product of products">
+  <p>{{ product.title }}</p>
+  <img class="w-50 h-50" src="{{ product.image }}" />
+</div>

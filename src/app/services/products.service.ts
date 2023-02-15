@@ -16,6 +16,11 @@ export class ProductsService {
     return this.http.get(this.url).pipe(catchError(this.handleError));
   }
 
+  popularProdFetch(): Observable<any> {
+    const url = `https://fakestoreapi.com/products?limit=5`;
+    return this.http.get(url).pipe(catchError(this.handleError));
+  }
+
   getProduct(id: number): Observable<any> {
     const url = `https://fakestoreapi.com/products/${id}`;
     return this.http.get(url).pipe(catchError(this.handleError));
