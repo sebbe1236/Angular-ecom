@@ -1,7 +1,9 @@
 <p>home works!</p>
 <div *ngFor="let product of products">
-  <p>{{ product.title }}</p>
-  <img class="w-50 h-50" src="{{ product.image }}" />
+  <a routerLink="/product/{{ product.id }}">
+    <p>{{ product.title }}</p>
+    <img class="w-50 h-50" src="{{ product.image }}" />
+  </a>
 </div>
 
 <div *ngIf="loading">

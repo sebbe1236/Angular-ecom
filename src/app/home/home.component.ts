@@ -16,10 +16,12 @@ export class HomeComponent {
       next: (response) => {
         this.products = response;
         console.log(response);
-        this.loading = false;
       },
       error: (error) => {
         console.log(error.message);
+      },
+      complete: () => {
+        console.log('Call completed');
         this.loading = false;
       },
     });

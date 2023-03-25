@@ -10,7 +10,11 @@ import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 export class NavbarComponent {
   basketIcon = faShoppingBasket;
 
-  itemsQuantity = 0;
+  public itemsQuantity = 0;
 
-  ngOnInit() {}
+  constructor(private cartService: CartService) {}
+
+  ngOnInit() {
+    this.cartService.cartProducts.length;
+  }
 }

@@ -11,7 +11,7 @@ import { CartService } from '../services/cart.service';
 export class CartComponent {
   //next up: display number of items in cart next to cart/cart sign.
   //source for potential quant increase: https://stackoverflow.com/questions/62278458/angular-subscribe-custom-object-and-save-to-localstorage-on-every-input-change
-
+  total = 0;
   products = this.cartService.getItems();
 
   constructor(private cartService: CartService) {}
@@ -26,10 +26,6 @@ export class CartComponent {
   }
 
   //legger til flere/viser flere jackets og ikke input+.
-  // addToCart(product: Product) {
-  //   this.cartService.addToCart(product);
-  //   this.cartService.saveCart();
-  // }
 
   ngOnInit() {}
 }
