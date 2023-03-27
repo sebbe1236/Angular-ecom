@@ -13,7 +13,7 @@ export class CartService {
 
   //legger til item`e i cartProducts array`et, functionen er assignet til en button click.
   addToCart(product: Product) {
-    this.cartProducts.push(product);
+    this.cartProducts.push({ ...product, qtn: 1 });
 
     console.log(product);
     console.log(this.cartProducts);

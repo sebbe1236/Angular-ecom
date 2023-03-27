@@ -42,9 +42,9 @@ export class SingleproductComponent {
     this.getSingleProduct();
   }
 
+  //https://medium.com/@moshevilner/creating-shopping-cart-using-angular8-c6a5d4a0f0b3
   addToCart(product: Product) {
     this.cartService.addToCart(product);
-
     this.cartService.saveCart();
     window.alert('Product added to cart');
   }

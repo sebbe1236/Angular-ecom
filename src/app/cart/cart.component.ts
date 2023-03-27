@@ -25,7 +25,12 @@ export class CartComponent {
     return this.products.reduce((p, { price }) => p + price, 0);
   }
 
-  //legger til flere/viser flere jackets og ikke input+.
+  increaseQuantity(id: number, newQuantity: number) {
+    const currentValue = this.products;
+    const existingItem = currentValue.findIndex(
+      (cartItem) => cartItem.id === id
+    );
+  }
 
   ngOnInit() {}
 }
