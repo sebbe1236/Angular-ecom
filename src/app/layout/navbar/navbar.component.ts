@@ -8,13 +8,26 @@ import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
+  //Find a way to loop through storage and display number of items in there.
   basketIcon = faShoppingBasket;
+  public count: number | undefined;
 
-  public itemsQuantity = 0;
-
-  constructor(private cartService: CartService) {}
-
-  ngOnInit() {
-    this.cartService.cartProducts.length;
+  constructor(private cartService: CartService) {
+    Object.keys(localStorage).forEach((data) => {
+      let item = localStorage.getItem(data);
+      console.log(item);
+      const storageCount = item;
+    });
   }
+
+  // getStorage(json: any) {
+  //   let localStorageCount = localStorage.length;
+
+  //   window.addEventListener('cart_items', () => {
+  //     localStorageCount = localStorage.length;
+  //   });
+  //   console.log(localStorageCount);
+  // }
+
+  ngOnInit(): void {}
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, ReplaySubject } from 'rxjs';
 
 import Product from '../products';
 
@@ -13,7 +13,7 @@ export class CartService {
 
   //legger til item`e i cartProducts array`et, functionen er assignet til en button click.
   addToCart(product: Product) {
-    this.cartProducts.push({ ...product, qtn: 1 });
+    this.cartProducts.push(product);
 
     console.log(product);
     console.log(this.cartProducts);
@@ -26,6 +26,16 @@ export class CartService {
   //henter verdien som er lagra i localstorage
   getItems() {
     return this.cartProducts;
+  }
+
+  //Function to check length of array in storage.
+  itemsCount() {
+    let localStorageCount = localStorage.length;
+
+    window.addEventListener('cart_items', () => {
+      localStorageCount = localStorage.length;
+    });
+    console.log(localStorageCount);
   }
 
   //fjerner det som er i localstorage, fjerner via button...assign click event til knapp

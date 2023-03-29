@@ -28,13 +28,15 @@ export class SingleproductComponent {
       next: (response) => {
         this.product = response;
         console.log(response);
-        this.Loader = false;
       },
       error: (err: HttpErrorResponse) => {
         console.log(err.message, 'Something broke');
-        this.Loader = false;
+
         this.errorMessage =
           'An error happened, please go back to the homepage. ';
+      },
+      complete: () => {
+        this.Loader = false;
       },
     });
   }

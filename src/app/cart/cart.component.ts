@@ -9,12 +9,13 @@ import { CartService } from '../services/cart.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent {
-  //next up: display number of items in cart next to cart/cart sign.
   //source for potential quant increase: https://stackoverflow.com/questions/62278458/angular-subscribe-custom-object-and-save-to-localstorage-on-every-input-change
-  total = 0;
+  count: number;
   products = this.cartService.getItems();
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService) {
+    this.count = localStorage.length;
+  }
 
   removeCartProduct(productid: number) {
     this.products = this.cartService.removeCartItem(productid);
@@ -25,11 +26,8 @@ export class CartComponent {
     return this.products.reduce((p, { price }) => p + price, 0);
   }
 
-  increaseQuantity(id: number, newQuantity: number) {
-    const currentValue = this.products;
-    const existingItem = currentValue.findIndex(
-      (cartItem) => cartItem.id === id
-    );
+  get quantity() {
+    return this.products.reduce((qtn, { id }) => qtn + id, 0);
   }
 
   ngOnInit() {}
