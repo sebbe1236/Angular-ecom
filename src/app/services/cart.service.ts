@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
 
 import Product from '../products';
 
@@ -8,6 +8,7 @@ import Product from '../products';
 })
 export class CartService {
   cartProducts: Product[] = [];
+  quantity?: number;
 
   constructor() {}
 
@@ -18,6 +19,11 @@ export class CartService {
     console.log(product);
     console.log(this.cartProducts);
   }
+
+  incrementQtn(product: any) {
+    this.cartProducts.push(product);
+    localStorage.setItem('cart_items', JSON.stringify(this.cartProducts));
+  }
   //lagrer cartProducts array til localstorage
   saveCart() {
     localStorage.setItem('cart_items', JSON.stringify(this.cartProducts));
@@ -26,16 +32,6 @@ export class CartService {
   //henter verdien som er lagra i localstorage
   getItems() {
     return this.cartProducts;
-  }
-
-  //Function to check length of array in storage.
-  itemsCount() {
-    let localStorageCount = localStorage.length;
-
-    window.addEventListener('cart_items', () => {
-      localStorageCount = localStorage.length;
-    });
-    console.log(localStorageCount);
   }
 
   //fjerner det som er i localstorage, fjerner via button...assign click event til knapp

@@ -1,6 +1,6 @@
 export default interface Product {
-  qtn: any;
-  Itemquantity: any;
+  qty: any;
+
   title: string;
   price: number;
   image: HTMLImageElement;
