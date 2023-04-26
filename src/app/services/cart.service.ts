@@ -8,20 +8,21 @@ import Product from '../products';
 })
 export class CartService {
   cartProducts: Product[] = [];
-  quantity?: number;
-
+  qty: number = 0;
   constructor() {}
 
   //legger til item`e i cartProducts array`et, functionen er assignet til en button click.
   addToCart(product: Product) {
-    this.cartProducts.push(product);
+    this.cartProducts.push({ ...product, qty: 1 });
 
     console.log(product);
     console.log(this.cartProducts);
   }
 
   incrementQtn(product: any) {
+    //const existingItem = this.cartProducts.find((item) => item.id !== id);
     this.cartProducts.push(product);
+
     localStorage.setItem('cart_items', JSON.stringify(this.cartProducts));
   }
   //lagrer cartProducts array til localstorage

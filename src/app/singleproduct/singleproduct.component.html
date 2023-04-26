@@ -7,7 +7,13 @@
     Add to Cart
   </button>
 </div>
-
+<button type="number" (click)="increase()" placeholder="increase quantity">
+  increase
+</button>
+<button type="number" (click)="decrease()" placeholder="increase quantity">
+  decrease
+</button>
+<h3>Quantity in basket: {{ quantity }}</h3>
 <div></div>
 <div class="error_message">
   {{ errorMessage }}

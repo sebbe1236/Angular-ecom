@@ -1,5 +1,5 @@
 export default interface Product {
-  qty: any;
+  qty: number;
 
   title: string;
   price: number;
@@ -10,4 +10,10 @@ export default interface Product {
 
 export default interface Cart {
   items: Array<Product>;
+}
+
+export interface Products {
+  category: string;
+  image: HTMLImageElement;
+  title: string;
 }

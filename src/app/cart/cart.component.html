@@ -12,12 +12,8 @@
       >
         Remove
       </button>
-      <input
-        type="number"
-        (click)="increment(product)"
-        placeholder="quantity"
-      />
-      <button type="button">+</button>
+      <input type="number" (click)="increment()" placeholder="quantity" />
+      Add one more
     </div>
   </div>
   <span *ngIf="products.length > 0">total amount: ${{ getTotal }}</span>

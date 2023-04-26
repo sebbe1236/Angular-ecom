@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import Product from '../products';
-import Cart from '../products';
 import { CartService } from '../services/cart.service';
 
 @Component({
@@ -11,7 +9,6 @@ import { CartService } from '../services/cart.service';
 export class CartComponent {
   // Search for how to increment total of specific item if its already in storage.
   //https://stackoverflow.com/questions/67096973/increment-quantity-in-the-cart-and-save-in-localstorage-and-print-it
-  qty: number = 1;
   products = this.cartService.getItems();
 
   constructor(private cartService: CartService) {}
@@ -25,9 +22,20 @@ export class CartComponent {
     return this.products.reduce((p, { price }) => p + price, 0);
   }
 
-  increment(product: any) {
-    console.log(product);
-    this.cartService.incrementQtn(product);
+  //https://stackoverflow.com/questions/74821327/angular-render-something-depending-if-this-array-id-exist-in-another-array
+  // potential solve for render: Check if its already there and limit it too 1.
+  increment() {
+    const existingItem = localStorage.getItem('cart_items');
+    console.log(existingItem);
+
+    if (existingItem !== null) {
+      const item = JSON.parse(existingItem);
+      item.qty += 1;
+      console.log(item);
+      localStorage.setItem('cart_items', JSON.stringify(item));
+    } else {
+      return;
+    }
   }
 
   ngOnInit() {}

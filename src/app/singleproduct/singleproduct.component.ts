@@ -14,7 +14,17 @@ export class SingleproductComponent {
   product?: any;
   Loader: boolean = true;
   errorMessage: string = '';
-  itemExists: any[] = [];
+  quantity: number = 0;
+
+  increase() {
+    this.quantity++;
+    console.log(this.quantity);
+  }
+
+  decrease() {
+    this.quantity--;
+    console.log(this.quantity);
+  }
 
   constructor(
     private productService: ProductsService,
